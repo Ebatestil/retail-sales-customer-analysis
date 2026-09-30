@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "unique fact grains",
+    "no join fanout",
+    "sales rollups reconcile",
+    "refunds reconcile",
+    "payments reconcile",
+    "distinct returns reconcile",
+    "independent SQL sales, order and refund totals"
+  ],
+  "sql_engine": "SQLite",
+  "mysql_execution": "Not run; shared SQL uses portable syntax"
+}

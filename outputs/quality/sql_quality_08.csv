@@ -1,0 +1,3 @@
+source_table,rows,distinct_orders
+payments,300000,300000
+shipments,300000,300000

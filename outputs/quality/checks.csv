@@ -1,0 +1,105 @@
+table,rule,affected,population,rate,decision
+categories,duplicate_primary_key,0,30,0.0,Stop if present: ambiguous joins
+categories,duplicate_full_row,0,30,0.0,Stop if present: review before removing
+categories,missing_category_id,0,30,0.0,Stop if present: required source field
+categories,missing_category_name,0,30,0.0,Stop if present: required source field
+customers,duplicate_primary_key,0,50000,0.0,Stop if present: ambiguous joins
+customers,duplicate_full_row,0,50000,0.0,Stop if present: review before removing
+customers,missing_customer_id,0,50000,0.0,Stop if present: required source field
+customers,missing_city,0,50000,0.0,Stop if present: required source field
+customers,missing_signup_date,0,50000,0.0,Stop if present: required source field
+employees,duplicate_primary_key,0,1000,0.0,Stop if present: ambiguous joins
+employees,duplicate_full_row,0,1000,0.0,Stop if present: review before removing
+employees,missing_employee_id,0,1000,0.0,Stop if present: required source field
+employees,missing_store_id,0,1000,0.0,Stop if present: required source field
+employees,missing_salary,0,1000,0.0,Stop if present: required source field
+order_items,duplicate_primary_key,0,600000,0.0,Stop if present: ambiguous joins
+order_items,duplicate_full_row,0,600000,0.0,Stop if present: review before removing
+order_items,missing_order_item_id,0,600000,0.0,Stop if present: required source field
+order_items,missing_order_id,0,600000,0.0,Stop if present: required source field
+order_items,missing_product_id,0,600000,0.0,Stop if present: required source field
+order_items,missing_qty,0,600000,0.0,Stop if present: required source field
+order_items,missing_price,0,600000,0.0,Stop if present: required source field
+orders,duplicate_primary_key,0,300000,0.0,Stop if present: ambiguous joins
+orders,duplicate_full_row,0,300000,0.0,Stop if present: review before removing
+orders,missing_order_id,0,300000,0.0,Stop if present: required source field
+orders,missing_customer_id,0,300000,0.0,Stop if present: required source field
+orders,missing_store_id,0,300000,0.0,Stop if present: required source field
+orders,missing_order_date,0,300000,0.0,Stop if present: required source field
+orders,missing_promotion_id,0,300000,0.0,Stop if present: required source field
+payments,duplicate_primary_key,0,300000,0.0,Stop if present: ambiguous joins
+payments,duplicate_full_row,0,300000,0.0,Stop if present: review before removing
+payments,missing_payment_id,0,300000,0.0,Stop if present: required source field
+payments,missing_order_id,0,300000,0.0,Stop if present: required source field
+payments,missing_amount,0,300000,0.0,Stop if present: required source field
+products,duplicate_primary_key,0,10000,0.0,Stop if present: ambiguous joins
+products,duplicate_full_row,0,10000,0.0,Stop if present: review before removing
+products,missing_product_id,0,10000,0.0,Stop if present: required source field
+products,missing_category_id,0,10000,0.0,Stop if present: required source field
+products,missing_supplier_id,0,10000,0.0,Stop if present: required source field
+products,missing_price,0,10000,0.0,Stop if present: required source field
+promotions,duplicate_primary_key,0,50,0.0,Stop if present: ambiguous joins
+promotions,duplicate_full_row,0,50,0.0,Stop if present: review before removing
+promotions,missing_promotion_id,0,50,0.0,Stop if present: required source field
+promotions,missing_discount,0,50,0.0,Stop if present: required source field
+returns,duplicate_primary_key,0,30000,0.0,Stop if present: ambiguous joins
+returns,duplicate_full_row,0,30000,0.0,Stop if present: review before removing
+returns,missing_return_id,0,30000,0.0,Stop if present: required source field
+returns,missing_order_item_id,0,30000,0.0,Stop if present: required source field
+returns,missing_refund,0,30000,0.0,Stop if present: required source field
+shipments,duplicate_primary_key,0,300000,0.0,Stop if present: ambiguous joins
+shipments,duplicate_full_row,0,300000,0.0,Stop if present: review before removing
+shipments,missing_shipment_id,0,300000,0.0,Stop if present: required source field
+shipments,missing_order_id,0,300000,0.0,Stop if present: required source field
+shipments,missing_status,0,300000,0.0,Stop if present: required source field
+stores,duplicate_primary_key,0,100,0.0,Stop if present: ambiguous joins
+stores,duplicate_full_row,0,100,0.0,Stop if present: review before removing
+stores,missing_store_id,0,100,0.0,Stop if present: required source field
+stores,missing_city,0,100,0.0,Stop if present: required source field
+suppliers,duplicate_primary_key,0,200,0.0,Stop if present: ambiguous joins
+suppliers,duplicate_full_row,0,200,0.0,Stop if present: review before removing
+suppliers,missing_supplier_id,0,200,0.0,Stop if present: required source field
+suppliers,missing_country,0,200,0.0,Stop if present: required source field
+orders,unmatched_customer_id,0,300000,0.0,Stop if present: unmapped relationship
+orders,unmatched_store_id,0,300000,0.0,Stop if present: unmapped relationship
+orders,unmatched_promotion_id,0,300000,0.0,Stop if present: unmapped relationship
+order_items,unmatched_order_id,0,600000,0.0,Stop if present: unmapped relationship
+order_items,unmatched_product_id,0,600000,0.0,Stop if present: unmapped relationship
+products,unmatched_category_id,0,10000,0.0,Stop if present: unmapped relationship
+products,unmatched_supplier_id,0,10000,0.0,Stop if present: unmapped relationship
+employees,unmatched_store_id,0,1000,0.0,Stop if present: unmapped relationship
+payments,unmatched_order_id,0,300000,0.0,Stop if present: unmapped relationship
+shipments,unmatched_order_id,0,300000,0.0,Stop if present: unmapped relationship
+returns,unmatched_order_item_id,0,30000,0.0,Stop if present: unmapped relationship
+order_items,invalid_qty,0,600000,0.0,Stop if present: invalid numeric domain
+order_items,iqr_outlier_qty,0,600000,0.0,Review only; do not delete legitimate extremes
+order_items,invalid_price,0,600000,0.0,Stop if present: invalid numeric domain
+order_items,iqr_outlier_price,0,600000,0.0,Review only; do not delete legitimate extremes
+products,invalid_price,0,10000,0.0,Stop if present: invalid numeric domain
+products,iqr_outlier_price,0,10000,0.0,Review only; do not delete legitimate extremes
+payments,invalid_amount,0,300000,0.0,Stop if present: invalid numeric domain
+payments,iqr_outlier_amount,0,300000,0.0,Review only; do not delete legitimate extremes
+returns,invalid_refund,0,30000,0.0,Stop if present: invalid numeric domain
+returns,iqr_outlier_refund,0,30000,0.0,Review only; do not delete legitimate extremes
+employees,invalid_salary,0,1000,0.0,Stop if present: invalid numeric domain
+employees,iqr_outlier_salary,0,1000,0.0,Review only; do not delete legitimate extremes
+promotions,invalid_discount,0,50,0.0,Stop if present: invalid numeric domain
+promotions,iqr_outlier_discount,0,50,0.0,Review only; do not delete legitimate extremes
+orders,invalid_order_date,0,300000,0.0,Stop if present: invalid date
+customers,invalid_signup_date,0,50000,0.0,Stop if present: invalid date
+customers,case_variants_city,0,4,0.0,Review category variants; retain source labels
+stores,case_variants_city,0,4,0.0,Review category variants; retain source labels
+suppliers,case_variants_country,0,3,0.0,Review category variants; retain source labels
+categories,case_variants_category_name,0,30,0.0,Review category variants; retain source labels
+shipments,case_variants_status,0,3,0.0,Review category variants; retain source labels
+orders,without_items,40767,300000,0.13589,Retain headers; exclude from sales-backed AOV denominator
+orders,before_signup,120020,300000,0.4000666666666667,Retain sales; do not use signup for cohorts or tenure
+orders,payment_differs_from_item_sales,299990,300000,0.9999666666666667,Keep payments separate from item sales
+orders,payment_differs_from_discount_scenario,300000,300000,1.0,Do not apply promotion discount to sales without definition
+order_items,catalog_price_differs,599863,600000,0.9997716666666666,Use transaction price; no inferred discount from catalog price
+returns,repeated_item_reference,749,30000,0.024966666666666668,Keep distinct return IDs; aggregate before joining
+order_items,cumulative_refund_exceeds_sales,7498,600000,0.012496666666666666,Flag and retain refunds; withhold verified net revenue
+payments,multiple_records_per_order,0,300000,0.0,Aggregate each fact before joining
+orders,without_payments,0,300000,0.0,Do not infer missing records are zero
+shipments,multiple_records_per_order,0,300000,0.0,Aggregate each fact before joining
+orders,without_shipments,0,300000,0.0,Do not infer missing records are zero

@@ -1,0 +1,9 @@
+table,transformation,changed
+categories,trim category_name,0
+customers,trim city,0
+customers,trim signup_date,0
+orders,trim order_date,0
+shipments,trim status,0
+stores,trim city,0
+suppliers,trim country,0
+shipments,lowercase status,0

@@ -1,0 +1,48 @@
+// Create measures individually. See README.md for relationships and filter semantics.
+Recorded Item Sales = SUM(FactItems[item_sales])
+
+Sales-backed Orders = DISTINCTCOUNT(FactItems[order_id])
+
+Order Headers = COUNTROWS(FactOrders)
+
+Sales-backed AOV = DIVIDE([Recorded Item Sales], [Sales-backed Orders])
+
+Units = SUM(FactItems[qty])
+
+Sold Items = COUNTROWS(FactItems)
+
+Returned Items = SUM(FactItems[returned_item])
+
+Returned-item Rate = DIVIDE([Returned Items], [Sold Items])
+
+Returned Orders =
+CALCULATE(DISTINCTCOUNT(FactItems[order_id]), FactItems[returned_item] = 1)
+
+Returned-order Rate = DIVIDE([Returned Orders], [Sales-backed Orders])
+
+Sales-backed Customers = DISTINCTCOUNT(FactItems[customer_id])
+
+Sales per Customer = DIVIDE([Recorded Item Sales], [Sales-backed Customers])
+
+Repeat Buyers =
+COUNTROWS(
+    FILTER(
+        VALUES(FactItems[customer_id]),
+        CALCULATE(DISTINCTCOUNT(FactItems[order_id])) >= 2
+    )
+)
+
+Repeat-buyer Rate = DIVIDE([Repeat Buyers], [Sales-backed Customers])
+
+Recorded Refunds = SUM(FactItems[refund_amount])
+
+Recorded Payments = SUM(FactOrders[payment_amount])
+
+Orders Without Items = CALCULATE(COUNTROWS(FactOrders), FactOrders[has_items] = 0)
+
+Orders Before Signup = SUM(FactOrders[before_signup])
+
+Items With Excess Refunds = SUM(FactItems[refund_exceeds_sales])
+
+// Diagnostic arithmetic only. Do not label as verified net revenue.
+Sales Less Recorded Refunds = [Recorded Item Sales] - [Recorded Refunds]
