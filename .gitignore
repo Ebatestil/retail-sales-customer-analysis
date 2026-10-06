@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 outputs/retail_analysis.sqlite
+dist/
+.vercel/
+node_modules/

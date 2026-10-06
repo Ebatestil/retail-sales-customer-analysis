@@ -1,0 +1,8 @@
+{
+  "name": "retail-sales-customer-analysis-report",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build_static.mjs"
+  }
+}

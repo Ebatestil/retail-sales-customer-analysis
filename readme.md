@@ -48,7 +48,11 @@ Amounts are labeled **currency units (CU)** because the source does not identify
 | 9. Recommend actions | Prioritized investigation and experiment proposals |
 | 10. Report | Executive summary through methodology in Markdown and HTML |
 
-## Reproduce
+## Host the report
+
+The project includes a Vercel configuration. Import this repository into Vercel with **Other** as the framework, **`npm run build`** as the build command, and **`dist`** as the output directory. The root URL will open the report. See the [deployment guide](docs/vercel-deployment.md) for the complete setup.
+
+## Reproduce locally
 
 Requires Python 3.10+ with pandas and NumPy. From the project root:
 

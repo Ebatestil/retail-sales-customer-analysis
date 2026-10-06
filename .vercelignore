@@ -1,0 +1,8 @@
+.git
+data
+dist
+node_modules
+outputs/retail_analysis.sqlite
+outputs/tables/fact_orders.csv
+outputs/tables/fact_items.csv
+__pycache__
